@@ -21,10 +21,11 @@ mongoose
 .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
 })
-.then(() => console.log("DB Connected..!"))
+.then(() => console.log("DB Connected 🥳..!"))
 .catch(err => console.log(err))
 const PORT = process.env.PORT|| 9900;
 app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`))
+app.get('/', (req, res) => res.send("Hello world"))
 
 // mongoose.connect(CONNECTION_URL)
 //   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
